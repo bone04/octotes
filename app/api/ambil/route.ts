@@ -19,9 +19,9 @@ export async function GET() {
     });
    // Make a REST API request
  const  { data }  = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
-  owner: 'OWNER',
-  repo: 'REPO',
-  path: 'PATH',
+  owner,
+  repo,
+  path,
   headers: {
     'X-GitHub-Api-Version': '2026-03-10'
   }
