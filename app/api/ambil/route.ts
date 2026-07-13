@@ -1,6 +1,6 @@
 // app/api/hello/route.ts
 import { NextResponse } from 'next/server';
-const dynamic = "force-static"
+const dynamic = "force-dynamic"
 
 export async function GET() {
   const data = { message: "Hello, world!" };
