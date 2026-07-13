@@ -1,9 +1,12 @@
-// app/api/hello/route.ts
 import { NextResponse } from 'next/server';
-export const dynamic = "force-dynamic"
 
+// Handle the GET request
 export async function GET() {
-  const data = { message: "Hello, world!" };
-  
-  return NextResponse.json(data);
+  const users = [
+    { id: 1, name: 'Alice' },
+    { id: 2, name: 'Bob' },
+  ];
+
+  // Return the data as JSON
+  return NextResponse.json(users);
 }
