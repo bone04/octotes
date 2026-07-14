@@ -23,7 +23,8 @@ export async function GET() {
       'X-GitHub-Api-Version': '2026-03-10'
     }
   })
-  
+
+  if (!Array.isArray(data)) return [];
 
 return NextResponse.json({ message: "Data received" });
 }
