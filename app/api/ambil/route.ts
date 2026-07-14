@@ -29,7 +29,7 @@ export async function GET() {
     if (data.type === 'file') { // Make sure it's a file
       // data.content;
       const content = Buffer.from(data.content, "base64").toString("utf8");
-      console.log(content);
+      console.log("content buffer");
     }
   }
 
