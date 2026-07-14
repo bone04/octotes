@@ -27,6 +27,6 @@ export async function GET() {
     },
   })
 
- console.log(data);
+ console.log(data.content);
 return NextResponse.json({ message: "Data received" });
 }
