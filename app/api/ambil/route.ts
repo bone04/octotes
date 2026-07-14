@@ -15,7 +15,7 @@ export async function GET() {
     });
   
   // Make a REST API request
- const  { data }  = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
+ const  response  = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
     owner,
     repo,
     path,
@@ -27,6 +27,12 @@ export async function GET() {
     },
   })
 
- console.log(data.content);
+ if (!Array.isArray(response.data) {
+  if (response.data.type === 'file') {
+    console.log(response.data.content)
+  }
+}
+
+  
 return NextResponse.json({ message: "Data received" });
 }
