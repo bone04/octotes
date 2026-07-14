@@ -24,7 +24,7 @@ export async function GET() {
     }
   })
 
- const fileBuffer = Buffer.from(data);
+ const fileBuffer = Buffer.from(data.content);
   console.log(fileBuffer);
 return NextResponse.json({ message: "Data received" });
 }
