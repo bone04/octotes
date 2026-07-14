@@ -24,7 +24,12 @@ export async function GET() {
     }
   })
 
-  if (!Array.isArray(data)) return [];
+  if (!Array.isArray(data)) { // Filter out directories
+
+    if (data.type === 'file') { // Make sure it's a file
+      data.content;
+    }
+  }
 
 return NextResponse.json({ message: "Data received" });
 }
