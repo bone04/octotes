@@ -27,7 +27,7 @@ export async function GET() {
     },
   })
 
- if (!Array.isArray(response.data) {
+ if (!Array.isArray(response.data)) {
   if (response.data.type === 'file') {
     console.log("response.data.content")
   }
