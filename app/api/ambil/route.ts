@@ -21,10 +21,12 @@ export async function GET() {
     path,
     headers: {
       'X-GitHub-Api-Version': '2026-03-10'
-    }
+    },
+   mediaType: {
+      format: "raw", 
+    },
   })
 
- const fileBuffer = Buffer.from(data.content);
-  console.log(fileBuffer);
+ console.log(data);
 return NextResponse.json({ message: "Data received" });
 }
