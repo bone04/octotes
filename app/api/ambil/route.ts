@@ -24,9 +24,7 @@ export async function GET() {
     }
   })
 
-      // data.content;
-      const content = Buffer.from(data.content, "base64").toString("utf8");
-      console.log("content buffer");
-
+ const fileBuffer = Buffer.from(data);
+  console.log(fileBuffer);
 return NextResponse.json({ message: "Data received" });
 }
