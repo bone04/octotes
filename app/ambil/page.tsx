@@ -6,7 +6,7 @@ export default function AmbilPage() {
     const [loading, setLoading] = useState(true);
   
   useEffect(() => {
-    fetch('/api/ambil') // Relative URL works perfectly on the client side
+    fetch(`https://bone04.github.io/octotes/api/ambil`) // Relative URL works perfectly on the client side
       .then((res) => res.json())
       .then((data) => {
         setData(data);
