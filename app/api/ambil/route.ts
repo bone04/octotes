@@ -16,7 +16,7 @@ export async function GET() {
   
   // Make a REST API request
   try {
-       const  result   = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
+       const  { result }   = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
           owner,
           repo,
           path,
