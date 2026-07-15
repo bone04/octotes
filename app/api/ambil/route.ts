@@ -38,6 +38,6 @@ export async function GET() {
     }
   // console.log(`Error! Status: ${error.status}. Rate limit remaining: ${error.headers["x-ratelimit-remaining"]}. Message: ${error.response.data.message}`)
 }
-  
-return NextResponse.json({ message: "Data received" });
+  //message: "Data received"
+return NextResponse.json({ result.content });
 }
