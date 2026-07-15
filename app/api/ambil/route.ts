@@ -30,8 +30,12 @@ export async function GET() {
       
  console.log(`Success! Status: ${result.status}. Rate limit remaining: ${result.headers["x-ratelimit-remaining"]}`)
 
-} catch (error) {
-    console.log(error.message); 
+} catch (err) {
+    if (typeof err === 'object' && err !== null) {
+      console.log(err.toString());
+    } else {
+      console.log('Unexpected error', err);
+    }
   // console.log(`Error! Status: ${error.status}. Rate limit remaining: ${error.headers["x-ratelimit-remaining"]}. Message: ${error.response.data.message}`)
 }
   
