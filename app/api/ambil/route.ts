@@ -28,7 +28,7 @@ export async function GET() {
           },
         })
  // console.log(`Success! Status: ${result.status}. Rate limit remaining: ${result.headers["x-ratelimit-remaining"]}`)
-    const content = Buffer.from(result.data.content, 'base64').toString()
+    const content = Buffer.from(result.content, 'base64').toString() // result.data.content
     console.log(content)
 
 } catch (err) {
