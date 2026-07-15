@@ -15,20 +15,24 @@ export async function GET() {
     });
   
   // Make a REST API request
- const  data  = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
-    owner,
-    repo,
-    path,
-    headers: {
-      'X-GitHub-Api-Version': '2026-03-10'
-    },
-   mediaType: {
-      format: "raw", 
-    },
-  })
+  try {
+       const  result   = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
+          owner,
+          repo,
+          path,
+          headers: {
+            'X-GitHub-Api-Version': '2026-03-10'
+          },
+         mediaType: {
+            format: "raw", 
+          },
+        })
+      
+ console.log(`Success! Status: ${result.status}. Rate limit remaining: ${result.headers["x-ratelimit-remaining"]}`)
 
- console.log(data);
-
+} catch (error) {
+  console.log(`Error! Status: ${error.status}. Rate limit remaining: ${error.headers["x-ratelimit-remaining"]}. Message: ${error.response.data.message}`)
+}
   
 return NextResponse.json({ message: "Data received" });
 }
