@@ -27,8 +27,9 @@ export async function GET() {
             format: "raw", 
           },
         })
-      
- console.log(`Success! Status: ${result.status}. Rate limit remaining: ${result.headers["x-ratelimit-remaining"]}`)
+ // console.log(`Success! Status: ${result.status}. Rate limit remaining: ${result.headers["x-ratelimit-remaining"]}`)
+    const content = Buffer.from(result.data.content, 'base64').toString()
+    console.log(content)
 
 } catch (err) {
     if (typeof err === 'object' && err !== null) {
@@ -39,5 +40,5 @@ export async function GET() {
   // console.log(`Error! Status: ${error.status}. Rate limit remaining: ${error.headers["x-ratelimit-remaining"]}. Message: ${error.response.data.message}`)
 }
   //message: "Data received"
-return NextResponse.json({ result.content });
+return NextResponse.json( content );
 }
