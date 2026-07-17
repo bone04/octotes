@@ -1,4 +1,4 @@
-export default function CorezPage() {
+export default async function CorezPage() {
   const owner: string = process.env.GITHUB_OWNER || "bone04"
   const repo: string = process.env.GITHUB_REPO || "octotes"
   const path: string = process.env.GITHUB_FILE_PATH || "items.json"
