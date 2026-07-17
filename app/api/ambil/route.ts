@@ -27,7 +27,14 @@ export async function GET() {
             format: "raw", 
           },
         })
-    console.log(result.type)
+    // console.log(result.type)
+    const isObjec = Object
+    .prototype
+    .toString
+    .call(result) === '[object Object]'
+    &&
+    !Array
+        .isArray(result);
  // console.log(`Success! Status: ${result.status}. Rate limit remaining: ${result.headers["x-ratelimit-remaining"]}`)
     // const content = Buffer.from(result._links.self, 'base64').toString() // result.data.content
     // console.log(content)
