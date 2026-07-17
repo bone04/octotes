@@ -38,5 +38,12 @@ export default async function CorezPage() {
 }
   //message: "Data received"
 
-  return ()
+  return (
+
+    <>
+      <div>
+        Halaman Corez Page Test Octokit
+      </div>
+    </>
+  )
 }
