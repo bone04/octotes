@@ -39,7 +39,7 @@ export default async function CorezPage() {
   // console.log(`Error! Status: ${error.status}. Rate limit remaining: ${error.headers["x-ratelimit-remaining"]}. Message: ${error.response.data.message}`)
 }
   //message: "Data received"
-
+console.log("ini halaman corez")
   return (
 
     <>
