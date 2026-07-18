@@ -25,10 +25,10 @@ export default async function CorezPage() {
           },
         })
     // console.log(result.type)
-  console.log(Array.isArray(result));
+ 
  // console.log(`Success! Status: ${result.status}. Rate limit remaining: ${result.headers["x-ratelimit-remaining"]}`)
-    // const content = Buffer.from(result._links.self, 'base64').toString() // result.data.content
-    // console.log(content)
+    const content = Buffer.from(result._links.self, 'base64').toString() // result.data.content
+    console.log(content)
 
 } catch (err) {
     if (typeof err === 'object' && err !== null) {
@@ -39,7 +39,9 @@ export default async function CorezPage() {
   // console.log(`Error! Status: ${error.status}. Rate limit remaining: ${error.headers["x-ratelimit-remaining"]}. Message: ${error.response.data.message}`)
 }
   //message: "Data received"
-console.log("ini halaman corez")
+  console.log("ini halaman corez")
+  console.log("is array",  Array.isArray(result));
+  console.log("result", result);
   return (
 
     <>
