@@ -1,3 +1,5 @@
+import { Octokit } from "@octokit/core";
+
 export default async function CorezPage() {
   const owner: string = process.env.GITHUB_OWNER || "bone04"
   const repo: string = process.env.GITHUB_REPO || "octotes"
