@@ -26,7 +26,8 @@ export default async function CorezPage() {
         })
       // Error [HttpError]: Bad credentials
       if (Array.isArray(response.data)) {
-        console.log("Path is a directory, not a file")
+         // Code to execute if the variable is an array
+          console.log("It is an array!");
     }
 
     // console.log(result.type)
