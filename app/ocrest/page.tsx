@@ -16,13 +16,7 @@ export default async function CorezPage() {
        const response = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
           owner,
           repo,
-          path,
-          headers: {
-            'X-GitHub-Api-Version': '2026-03-10'
-          },
-         mediaType: {
-            format: "raw", 
-          },
+          path
         })
       // Error [HttpError]: Bad credentials
       if (Array.isArray(response.data)) {
