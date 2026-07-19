@@ -26,10 +26,7 @@ export default async function CorezPage() {
         })
       // Error [HttpError]: Bad credentials
       if (Array.isArray(response.data)) {
-      return NextResponse.json(
-        { error: "Path is a directory, not a file" },
-        { status: 400 }
-      );
+        console.log("Path is a directory, not a file"}
     }
 
     // console.log(result.type)
