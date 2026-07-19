@@ -1,4 +1,4 @@
-import { Octokit } from "@octokit/rest";
+import { Octokit } from "@octokit/core";
 
 export default async function CorezPage() {
   const owner: string = process.env.GITHUB_OWNER || "bone04"
@@ -12,8 +12,7 @@ export default async function CorezPage() {
     });
   
   // Make a REST API request
-  console.log("make octokit rest page")
-/*       const response = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
+  const response = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
           owner: 'bone04',
           repo: 'octotes',
           path: 'items.json',
@@ -28,7 +27,7 @@ export default async function CorezPage() {
     }
 
     console.log(response.data)
- */
+
   //const name = response.name
   return (
 
