@@ -12,8 +12,8 @@ export default async function CorezPage() {
     });
   
   // Make a REST API request
-  
-       const response = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
+  console.log("make octokit rest page")
+/*       const response = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
           owner: 'bone04',
           repo: 'octotes',
           path: 'items.json',
@@ -28,13 +28,13 @@ export default async function CorezPage() {
     }
 
     console.log(response.data)
- 
+ */
   //const name = response.name
   return (
 
     <>
       <div>
-        Halaman Corez Page Test Octokit
+        Halaman Corest Page Test Octokit
       </div>
     </>
   )
