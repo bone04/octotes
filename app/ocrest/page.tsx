@@ -26,7 +26,7 @@ export default async function CorezPage() {
         })
     // console.log(result.type)
  
-  console.log(response.data.name)
+  const name = response.data.name
   return (
 
     <>
