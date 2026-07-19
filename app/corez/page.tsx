@@ -33,8 +33,8 @@ export default async function CorezPage() {
 
   //message: "Data received"
   console.log("ini halaman corez")
-  console.log("is array",  Array.isArray(result));
-  console.log("result", result);
+  // console.log("is array",  Array.isArray(result));
+  // console.log("result", result);
   return (
 
     <>
