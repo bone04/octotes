@@ -27,9 +27,9 @@ export default async function CorezPage() {
           console.log("It is an array!");
     }
 
-    // console.log(result.type)
+    console.log(response.data)
  
-  const name = response.name
+  //const name = response.name
   return (
 
     <>
