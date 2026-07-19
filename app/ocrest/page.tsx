@@ -12,7 +12,7 @@ export default async function CorezPage() {
     });
   
   // Make a REST API request
-  
+  /*
        const response = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
           owner,
           repo,
@@ -24,6 +24,8 @@ export default async function CorezPage() {
             format: "raw", 
           },
         })
+      // Error [HttpError]: Bad credentials
+      */
     // console.log(result.type)
  
   // const name = response.data.name
