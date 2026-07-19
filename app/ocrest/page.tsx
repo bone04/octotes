@@ -21,9 +21,9 @@ export default async function CorezPage() {
           }
         })
       // Error [HttpError]: Bad credentials
-      
-    console.log(response.data)
-  console.log("is array",  Array.isArray(result));
+      if (Array.isArray(response.data)) {
+        return { message: 'Failed to get data' }
+      }
 
   //const name = response.name
   return (
