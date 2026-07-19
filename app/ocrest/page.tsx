@@ -23,13 +23,14 @@ export default async function CorezPage() {
       // Error [HttpError]: Bad credentials
       
     console.log(response.data)
+  console.log("is array",  Array.isArray(result));
 
   //const name = response.name
   return (
 
     <>
       <div>
-        {response.data}
+        {response}
         Halaman Corest Page Test Octokit
       </div>
     </>
