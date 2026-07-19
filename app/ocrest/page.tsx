@@ -13,7 +13,7 @@ export default async function CorezPage() {
   
   // Make a REST API request
   
-       const  result   = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
+       const  response   = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
           owner,
           repo,
           path,
@@ -26,15 +26,7 @@ export default async function CorezPage() {
         })
     // console.log(result.type)
  
- console.log(`Success! Status: ${result.status}. Rate limit remaining: ${result.headers["x-ratelimit-remaining"]}`)
-    // const content = Buffer.from(result._links.self, 'base64').toString() // result.data.content
-    // console.log(content)
-
-
-  //message: "Data received"
-  console.log("ini halaman corez")
-  console.log("is array",  Array.isArray(result));
-  console.log("result", result);
+  console.log(response.data.name)
   return (
 
     <>
