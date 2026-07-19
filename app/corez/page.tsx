@@ -26,7 +26,7 @@ export default async function CorezPage() {
         })
     // console.log(result.type)
  
- console.log(`Success! Status: ${result.status}. Rate limit remaining: ${result.headers["x-ratelimit-remaining"]}`)
+// console.log(`Success! Status: ${result.status}. Rate limit remaining: ${result.headers["x-ratelimit-remaining"]}`)
     // const content = Buffer.from(result._links.self, 'base64').toString() // result.data.content
     // console.log(content)
 
