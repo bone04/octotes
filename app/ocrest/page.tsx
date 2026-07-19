@@ -13,7 +13,7 @@ export default async function CorezPage() {
   
   // Make a REST API request
   
-       const  response   = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
+       const  { response }   = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
           owner,
           repo,
           path,
