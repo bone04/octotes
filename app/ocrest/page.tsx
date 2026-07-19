@@ -21,11 +21,7 @@ export default async function CorezPage() {
           }
         })
       // Error [HttpError]: Bad credentials
-      if (Array.isArray(response.data)) {
-         // Code to execute if the variable is an array
-          console.log("It is an array!");
-    }
-
+      
     console.log(response.data)
 
   //const name = response.name
@@ -33,6 +29,7 @@ export default async function CorezPage() {
 
     <>
       <div>
+        {response.data.name}
         Halaman Corest Page Test Octokit
       </div>
     </>
