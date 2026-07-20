@@ -8,7 +8,7 @@ export default async function CorezPage() {
       throw new Error("OWNER environment variable is required.");
     }
   const octokit = new Octokit({
-      auth: `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` || ``
+      auth: process.env.GITHUB_TOKEN  || ``
         // process.env.GITHUB_TOKEN || `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 `
     });
   
