@@ -21,7 +21,7 @@ export default async function CorezPage() {
           }
         })
       // Error [HttpError]: Bad credentials
-      if (Array.isArray(response.data)) {
+      if (Array.isArray(response)) {
         return { message: 'Failed to get data' }
       }
 
