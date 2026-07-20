@@ -27,8 +27,7 @@ export default async function CorezPage() {
         return { message: 'Failed to get data' }
       }
     */// Correctly access the property
-const akuName = akuResponse.data.name;
-console.log(akuName);
+
   const branch_git = akuResponse as OctokitResponse<{ name: string; commit: { sha: string; url: string } }>;
 const branchName = branch_git.data.name;
   /*
