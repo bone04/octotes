@@ -14,7 +14,10 @@ export default async function CorezPage() {
   
   // Make a REST API request
   // 'GET /repos/{owner}/{repo}/contents/{path}',
-  const { akuResponse } = await octokit.rest.repos.getContent( {
+  type Data = {
+    name: string;
+  }
+  const akuResponse: OctokitResponse<Data> = await octokit.rest.repos.getContent( {
           owner: 'bone04',
           repo: 'octotes',
           path: 'items.json',
@@ -30,7 +33,7 @@ export default async function CorezPage() {
     */// Correctly access the property
 
   // const branch_git = akuResponse as OctokitResponse<{ name: string; commit: { sha: string; url: string } }>;
-const branchName = akuResponse.data.name;
+const dataName = akuResponse.data.name;
   /*
   if (!response.data) {
     throw new Error('Unauthorized')
