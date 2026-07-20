@@ -27,7 +27,7 @@ export default async function CorezPage() {
         return { message: 'Failed to get data' }
       }
     */
-  const data = response.json();
+  const nama = response.name;
   console.log("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")
   /*
   if (!response.data) {
