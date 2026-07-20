@@ -8,7 +8,7 @@ export default async function CorezPage() {
       throw new Error("OWNER environment variable is required.");
     }
   const octokit = new Octokit({
-      auth: process.env.GITHUB_TOKEN || undefined
+      auth: process.env.GITHUB_TOKEN || `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`
     });
   
   // Make a REST API request
@@ -27,7 +27,7 @@ export default async function CorezPage() {
       }
     */
   
-  if (!response) {
+  if (!response.data) {
     throw new Error('Unauthorized')
   }
  
