@@ -29,8 +29,8 @@ export default async function CorezPage() {
       }
     */// Correctly access the property
 
-  // const branch_git = akuResponse as OctokitResponse<{ name: string; commit: { sha: string; url: string } }>;
-const branchName = akuResponse.data.name;
+  const branch_git = akuResponse as OctokitResponse<{ name: string; commit: { sha: string; url: string } }>;
+const branchName = branch_git.data.name;
   /*
   if (!response.data) {
     throw new Error('Unauthorized')
