@@ -21,16 +21,21 @@ export default async function CorezPage() {
           }
         })
       // Error [HttpError]: Bad credentials
+  /*
       if (Array.isArray(response)) {
         return { message: 'Failed to get data' }
       }
-
+    */
+  
+  if (!response) {
+    throw new Error('Unauthorized')
+  }
+ 
   //const name = response.name
   return (
 
     <>
       <div>
-        {response.data.name}
         Halaman Corest Page Test Octokit
       </div>
     </>
