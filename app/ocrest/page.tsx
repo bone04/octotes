@@ -8,7 +8,8 @@ export default async function CorezPage() {
       throw new Error("OWNER environment variable is required.");
     }
   const octokit = new Octokit({
-      auth: process.env.GITHUB_TOKEN || `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 `
+      auth: `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`
+        // process.env.GITHUB_TOKEN || `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 `
     });
   
   // Make a REST API request
@@ -27,10 +28,12 @@ export default async function CorezPage() {
       }
     */
   console.log("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")
+  const name = response.data.nama;
+  /*
   if (!response.data) {
     throw new Error('Unauthorized')
   }
- 
+ */
   //const name = response.name
   return (
 
