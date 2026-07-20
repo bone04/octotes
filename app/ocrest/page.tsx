@@ -30,7 +30,7 @@ export default async function CorezPage() {
 
     <>
       <div>
-        {response}
+        {response.data.name}
         Halaman Corest Page Test Octokit
       </div>
     </>
