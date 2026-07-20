@@ -28,7 +28,7 @@ export default async function CorezPage() {
       }
     */
   console.log("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")
-  const name = response.data.nama;
+  const name = response.data.name;
   /*
   if (!response.data) {
     throw new Error('Unauthorized')
