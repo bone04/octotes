@@ -13,7 +13,7 @@ export default async function CorezPage() {
     });
   
   // Make a REST API request
-  const response = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
+  const akuResponse = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
           owner: 'bone04',
           repo: 'octotes',
           path: 'items.json',
@@ -26,9 +26,11 @@ export default async function CorezPage() {
       if (Array.isArray(response)) {
         return { message: 'Failed to get data' }
       }
-    */
-  const nama = response.data.file;
-  console.log(nama)
+    */// Correctly access the property
+const akuName = akuResponse.data.name;
+console.log(akuName);
+  const branch_git = akuResponse as OctokitResponse<{ name: string; commit: { sha: string; url: string } }>;
+const branchName = branch_git.data.name;
   /*
   if (!response.data) {
     throw new Error('Unauthorized')
