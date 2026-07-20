@@ -17,7 +17,7 @@ export default async function CorezPage() {
   type Data = {
     name: string;
   }
-  const akuResponse: OctokitResponse<Data> = await octokit.rest.repos.getContent( {
+  const akuResponse = await octokit.rest.repos.getContent( {
           owner: 'bone04',
           repo: 'octotes',
           path: 'items.json',
@@ -26,6 +26,8 @@ export default async function CorezPage() {
           }
         })
       // Error [HttpError]: Bad credentials
+  const akuData = akuResponse.json();
+// const dataName = akuResponse.data.name;
   /*
       if (Array.isArray(response)) {
         return { message: 'Failed to get data' }
@@ -33,7 +35,7 @@ export default async function CorezPage() {
     */// Correctly access the property
 
   // const branch_git = akuResponse as OctokitResponse<{ name: string; commit: { sha: string; url: string } }>;
-const dataName = akuResponse.data.name;
+  
   /*
   if (!response.data) {
     throw new Error('Unauthorized')
