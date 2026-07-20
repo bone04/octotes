@@ -8,7 +8,7 @@ export default async function CorezPage() {
       throw new Error("OWNER environment variable is required.");
     }
   const octokit = new Octokit({
-      auth: `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`
+      auth: `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` || ``
         // process.env.GITHUB_TOKEN || `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 `
     });
   
@@ -17,16 +17,22 @@ export default async function CorezPage() {
   type Data = {
     name: string;
   }
-  const akuResponse = await octokit.rest.repos.getContent( {
+  const  { data } = await octokit.rest.repos.getContent( {
           owner: 'bone04',
           repo: 'octotes',
           path: 'items.json',
           headers: {
             'X-GitHub-Api-Version': '2026-03-10'
           }
-        })
+        });
+  if (!Array.isArray(data)) { // Filter out directories
+
+    if (data.type === 'file') { // Make sure it's a file
+      data.content;
+    }
+  }
       // Error [HttpError]: Bad credentials
-  const akuData = akuResponse.type;
+  // const akuData = akuResponse.type;
 // const dataName = akuResponse.data.name;
   /*
       if (Array.isArray(response)) {
