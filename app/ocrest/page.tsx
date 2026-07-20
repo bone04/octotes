@@ -26,7 +26,7 @@ export default async function CorezPage() {
           }
         })
       // Error [HttpError]: Bad credentials
-  const akuData = akuResponse.json();
+  const akuData = akuResponse.type;
 // const dataName = akuResponse.data.name;
   /*
       if (Array.isArray(response)) {
