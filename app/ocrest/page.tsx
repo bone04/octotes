@@ -17,6 +17,7 @@ export default async function CorezPage() {
   type Data = {
     name: string;
   }
+  /*
   const  { data } = await octokit.rest.repos.getContent( {
           owner: 'bone04',
           repo: 'octotes',
@@ -31,6 +32,7 @@ export default async function CorezPage() {
       data.content;
     }
   }
+  */
       // Error [HttpError]: Bad credentials
   // const akuData = akuResponse.type;
 // const dataName = akuResponse.data.name;
