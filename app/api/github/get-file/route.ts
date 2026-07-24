@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
       size: response.data.size,
       type: response.data.type,
       // content: response.data.content,
-      encoding: response.data.encoding,
+      // encoding: response.data.encoding,
     });
   } catch (error: any) {
     console.error("Error fetching file:", error);
