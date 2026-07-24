@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import FileForm from "../../components/FileForm";
-import FileEditor from "@/components/FileEditor";
-import FileViewer from "@/components/FileViewer";
+import FileForm from "@/components/FileForm";
+// import FileEditor from "@/components/FileEditor";
+// import FileViewer from "@/components/FileViewer";
 
 interface FileData {
   name: string;
