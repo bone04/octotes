@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
       sha: response.data.sha,
       size: response.data.size,
       type: response.data.type,
-      content: response.data.content,
+      // content: response.data.content,
       encoding: response.data.encoding,
     });
   } catch (error: any) {
