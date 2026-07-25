@@ -40,7 +40,7 @@ export default function FileForm({ onSubmit, loading }: FileFormProps) {
           value={token}
           onChange={(e) => setToken(e.target.value)}
           placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-red-700"
           disabled={loading}
         />
         <p className="text-xs text-gray-500 mt-1">
@@ -58,7 +58,7 @@ export default function FileForm({ onSubmit, loading }: FileFormProps) {
             value={owner}
             onChange={(e) => setOwner(e.target.value)}
             placeholder="username or org"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-5000 text-red-700"
             disabled={loading}
           />
         </div>
@@ -86,7 +86,7 @@ export default function FileForm({ onSubmit, loading }: FileFormProps) {
             value={path}
             onChange={(e) => setPath(e.target.value)}
             placeholder="path/to/file.json"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 0 text-red-700"
             disabled={loading}
           />
         </div>
