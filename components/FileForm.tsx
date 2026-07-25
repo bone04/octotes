@@ -86,7 +86,7 @@ export default function FileForm({ onSubmit, loading }: FileFormProps) {
             value={path}
             onChange={(e) => setPath(e.target.value)}
             placeholder="path/to/file.json"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 0"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-red-700"
             disabled={loading}
           />
         </div>
