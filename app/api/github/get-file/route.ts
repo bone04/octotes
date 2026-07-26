@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
     );
 */
     // { data }
-    const  response = await octokit.rest.repos.getContent( {
+    const { response } = await octokit.rest.repos.getContent( {
           owner: 'bone04',
           repo: 'octotes',
           path: 'items.json',
