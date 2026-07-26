@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { Octokit } from "@octokit/core";
+// import { Octokit } from "@octokit/core";
+import { Octokit } from "@octokit/rest";
 
 export async function POST(request: NextRequest) {
   try {
@@ -13,7 +14,7 @@ export async function POST(request: NextRequest) {
     }
 
     const octokit = new Octokit({ auth: token });
-
+/*
     const response = await octokit.request(
       "GET /repos/{owner}/{repo}/contents/{path}",
       {
@@ -22,7 +23,16 @@ export async function POST(request: NextRequest) {
         path,
       }
     );
-
+*/
+    // { data }
+    const  response = await octokit.rest.repos.getContent( {
+          owner: 'bone04',
+          repo: 'octotes',
+          path: 'items.json',
+          headers: {
+            'X-GitHub-Api-Version': '2026-03-10'
+          }
+        });
     if (Array.isArray(response.data)) {
       return NextResponse.json(
         { error: "Path is a directory, not a file" },
