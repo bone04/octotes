@@ -26,7 +26,7 @@ export default async function RestOoPage() {
       return;
     }
 
-    onSubmit({ token, owner, repo, path });
+    // onSubmit({ token, owner, repo, path });
   };
   
   return (
