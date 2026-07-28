@@ -93,8 +93,9 @@ export default async function RestOoPage() {
               type="submit"
 \              className="w-full bg-blue-600 text-white py-2 rounded-lg font-medium hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
-              {loading ? "Loading..." : "Load File"}
-            </button>
+
+          button
+        </button>
                   
         </form>
       </div>
