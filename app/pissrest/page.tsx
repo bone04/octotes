@@ -35,7 +35,7 @@ export default async function RestOoPage() {
       <h1>Ini Halaman Rest Octokit</h1>
       <div>
         <form onSubmit={handleSubmit}>
-          <div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   GitHub Token (Personal Access Token)
@@ -53,7 +53,7 @@ export default async function RestOoPage() {
                 </p>
               </div>
     
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
                     Owner
