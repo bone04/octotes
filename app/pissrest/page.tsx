@@ -18,13 +18,13 @@ export default function PissRestPage() {
   const [repo, setRepo] = useState("");
   const [path, setPath] = useState("");
 
-  const handleSubmit = async (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (!token || !owner || !repo || !path) {
       alert("Please fill in all fields");
       return;
     }
-    const formData = new FormData(event.target); 
+    const formData = new FormData(event.target as HTMLFormElement); 
         // Convert FormData to JSON
     const jsonObject = {};
     formData.forEach((value, key) => {
