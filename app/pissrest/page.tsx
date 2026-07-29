@@ -26,7 +26,7 @@ export default function PissRestPage() {
     }
     const formData = new FormData(event.target as HTMLFormElement); 
         // Convert FormData to JSON
-    const jsonObject = {};
+    const jsonObject: any = {};
     formData.forEach((value, key) => {
     jsonObject[key] = value;
     });
