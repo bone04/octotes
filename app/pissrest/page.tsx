@@ -12,7 +12,7 @@ interface FileFormProps {
   loading: boolean;
 }
 
-export default function RestOoPage() {
+export default function PissRestPage() {
   const [token, setToken] = useState("");
   const [owner, setOwner] = useState("");
   const [repo, setRepo] = useState("");
@@ -41,12 +41,12 @@ export default function RestOoPage() {
         } else {
           alert("Failed to add item today's.");
         }
-  }  catch (error) {  
+    }  catch (error) {  
       console.error("Error adding item today's:", error);
       alert("An error occurred while adding the item today's.");
     } 
   };
-  };
+
   
   return (
 
