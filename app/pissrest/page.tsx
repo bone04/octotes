@@ -18,13 +18,19 @@ export default function PissRestPage() {
   const [repo, setRepo] = useState("");
   const [path, setPath] = useState("");
 
-  const handleSubmit = async (formData: FormData) => {
-    e.preventDefault();
-
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     if (!token || !owner || !repo || !path) {
       alert("Please fill in all fields");
       return;
     }
+    const formData = new FormData(event.target); 
+        // Convert FormData to JSON
+    const jsonObject = {};
+    formData.forEach((value, key) => {
+    jsonObject[key] = value;
+    });
+
 
     // onSubmit({ token, owner, repo, path });
     try {
@@ -33,7 +39,7 @@ export default function PissRestPage() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(jsonObject),
       }); 
         if (response.ok) {
           alert("Item today's added successfully!");
