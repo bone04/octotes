@@ -12,13 +12,13 @@ interface FileFormProps {
   loading: boolean;
 }
 
-export default async function RestOoPage() {
+export default function RestOoPage() {
   const [token, setToken] = useState("");
   const [owner, setOwner] = useState("");
   const [repo, setRepo] = useState("");
   const [path, setPath] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (formData: FormData) => {
     e.preventDefault();
 
     if (!token || !owner || !repo || !path) {
@@ -27,6 +27,25 @@ export default async function RestOoPage() {
     }
 
     // onSubmit({ token, owner, repo, path });
+    try {
+      const response = await fetch("/api/pissrest", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      }); 
+        if (response.ok) {
+          alert("Item today's added successfully!");
+          setFormData({} as FormData);  
+        } else {
+          alert("Failed to add item today's.");
+        }
+  }  catch (error) {  
+      console.error("Error adding item today's:", error);
+      alert("An error occurred while adding the item today's.");
+    } 
+  };
   };
   
   return (
