@@ -43,7 +43,8 @@ export default function PissRestPage() {
       }); 
         if (response.ok) {
           alert("Item today's added successfully!");
-          setFormData({} as FormData);  
+          //setFormData({} as FormData);  
+          const result = await response.json();
         } else {
           alert("Failed to add item today's.");
         }
