@@ -36,8 +36,8 @@ export default function PissRestPage() {
         },
         body: JSON.stringify(formData),
       }); 
-      const data = await res.json();
-        if (!res.ok) {
+      const data = await response.json();
+        if (!response.ok) {
         throw new Error(data.error || 'Something went wrong');
       }
 
