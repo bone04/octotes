@@ -32,7 +32,8 @@ export default function PissRestPage() {
     try {
       const response = await fetch("/api/pissrest", {
         method: "POST",
-        headers: {
+        headers: {,
+           'X-GitHub-Api-Version': '2026-03-10',
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
