@@ -31,10 +31,12 @@ export default function PissRestPage() {
     // onSubmit({ token, owner, repo, path });
     try {
       const response = await fetch("/api/pissrest", {
-        method: "POST",
+        method: "PUT",
         headers: {
-           'X-GitHub-Api-Version': '2026-03-10',
-          "Content-Type": "application/json",
+          'Authorization': 'Bearer YOUR_GITHUB_TOKEN',
+          'Accept': 'application/vnd.github+json',
+          'Content-Type': 'application/json',
+          'X-GitHub-Api-Version': '2022-11-28' // Recommended header
         },
         body: JSON.stringify(formData),
       }); 
