@@ -39,7 +39,7 @@ export default function PissRestPage() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(jsonObject),
+        body: JSON.stringify({formData}),
       }); 
         if (response.ok) {
           alert("Item today's added successfully!");
