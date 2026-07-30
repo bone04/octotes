@@ -39,7 +39,7 @@ export default function PissRestPage() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: formData,
+        body: ({token, owner, repo, path}),
       }); 
         if (response.ok) {
           alert("Item today's added successfully!");
