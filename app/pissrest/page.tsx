@@ -34,12 +34,12 @@ export default function PissRestPage() {
 
     // onSubmit({ token, owner, repo, path });
     try {
-      const response = await fetch("https://bone04.github.io/octotes/api/pissrest", {
+      const response = await fetch("/api/pissrest", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({formData}),
+        body: formData,
       }); 
         if (response.ok) {
           alert("Item today's added successfully!");
