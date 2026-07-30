@@ -17,13 +17,13 @@ export default function PissRestPage() {
   const [status, setStatus] = useState('');
 
    // Handle input changes 
-  const handleChange = (event:any) => {
+  const handleChange = (event?:any) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
   
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (!token || !owner || !repo || !path) {
+    if (!formData.token || !formData.owner || !formData.repo || !formData.path) {
       alert("Please fill in all fields");
       return;
     }
