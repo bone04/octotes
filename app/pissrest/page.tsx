@@ -24,14 +24,14 @@ export default function PissRestPage() {
       alert("Please fill in all fields");
       return;
     }
-    const formData = new FormData(event.target as HTMLFormElement); 
+    //const formData = new FormData(event.target as HTMLFormElement); 
         // Convert FormData to JSON
+    /*
     const jsonObject: any = {};
     formData.forEach((value, key) => {
     jsonObject[key] = value;
     });
-
-
+    */
     // onSubmit({ token, owner, repo, path });
     try {
       const response = await fetch("/api/pissrest", {
@@ -44,7 +44,9 @@ export default function PissRestPage() {
         if (response.ok) {
           alert("Item today's added successfully!");
           //setFormData({} as FormData);  
-          const result = await response.json();
+          //const result = await response.json();
+          const data = await response.json();
+          return NextResponse.json(data);
         } else {
           alert("Failed to add item today's.");
         }
