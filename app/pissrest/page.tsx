@@ -43,7 +43,7 @@ export default function PissRestPage() {
 
       setStatus(data.message);
       setFormData({ token: '', owner: '', repo: '', path: ''  }); // Reset form
-    }  catch (error) {  
+    }  catch (error: unknown) {  
       setStatus(`Error: ${error.message}`);
       alert("An error occurred while adding the item today's.");
     } 
