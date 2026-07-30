@@ -67,6 +67,7 @@ export default function PissRestPage() {
                   GitHub Token (Personal Access Token)
                 </label>
                 <input
+                  name="token"
                   type="password"
                   value={token}
                   placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"
@@ -83,6 +84,7 @@ export default function PissRestPage() {
                     Owner
                   </label>
                   <input
+                    name="owner"
                     type="text"
                     value={owner}
                     placeholder="username or org"
@@ -95,6 +97,7 @@ export default function PissRestPage() {
                     Repository
                   </label>
                   <input
+                    name="repo"
                     type="text"
                     value={repo}
                     placeholder="repo-name"
@@ -107,6 +110,7 @@ export default function PissRestPage() {
                     File Path
                   </label>
                   <input
+                    name="path"
                     type="text"
                     value={path}
                     placeholder="path/to/file.json"
