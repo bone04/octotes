@@ -15,6 +15,7 @@ interface FileFormProps {
 export default function PissRestPage() {
  const [formData, setFormData] = useState({ token: '', owner: '', repo: '', path: '' });
   const [status, setStatus] = useState('');
+  const [error, setError] = useState(null);
 
    // Handle input changes 
   const handleChange = (event?:any) => {
@@ -42,11 +43,11 @@ export default function PissRestPage() {
       }
       setStatus(data.message);
       setFormData({ token: '', owner: '', repo: '', path: ''  }); // Reset form
-    }  catch (error: any) {  
-    
+    }  catch (error: any) {      
       //setStatus(`Error: ${error.message}`);
+      setError(`Error: ${error.message}`);
       alert("An error occurred while adding the item today's.");
-      return { success: false, error: error.message || 'Failed to create user.' };
+      //return { success: false, error: error.message || 'Failed to create user.' };
     } 
   };
 
