@@ -14,38 +14,16 @@ export async function POST(request: NextRequest) {
     }
 
     const octokit = new Octokit({ auth: token });
-/*
-    const response = await octokit.request(
-      "GET /repos/{owner}/{repo}/contents/{path}",
-      {
-        owner,
-        repo,
-        path,
-      }
-    );
-*/
-    // { data }
-    const response = await octokit.rest.repos.getContent( {
-          owner: 'bone04',
-          repo: 'octotes',
-          path: 'items.json',
-          headers: {
-            'X-GitHub-Api-Version': '2026-03-10'
-          }
-        });
-    if (Array.isArray(response.data)) {
-      return NextResponse.json(
-        { error: "Path is a directory, not a file" },
-        { status: 400 }
-      );
-    }
     console.log("Received request with token:", token, "owner:", owner, "repo:", repo, "path:", path);
     return NextResponse.json({
+       message: `Hello, ${token}!`,
+      /*
       name: response.data.name,
       path: response.data.path,
       sha: response.data.sha,
       size: response.data.size,
       type: response.data.type,
+      */
       // content: response.data.content,
       // encoding: response.data.encoding,
     });
