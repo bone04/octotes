@@ -18,7 +18,7 @@ export default function PissRestPage() {
   const [repo, setRepo] = useState("");
   const [path, setPath] = useState("");
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event?: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (!token || !owner || !repo || !path) {
       alert("Please fill in all fields");
