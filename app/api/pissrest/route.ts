@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 // import { Octokit } from "@octokit/core";
 import { Octokit } from "@octokit/rest";
 
-export async function POST(request: NextRequest) {
+export async function PUT(request: NextRequest) {
   try {
     const { token, owner, repo, path } = await request.json();
 
