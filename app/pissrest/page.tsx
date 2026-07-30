@@ -17,7 +17,7 @@ export default function PissRestPage() {
   const [status, setStatus] = useState('');
 
    // Handle input changes 
-  const handleChange = (event?:any) => {
+  const handleChange = (event:any) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
   
