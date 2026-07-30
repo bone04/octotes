@@ -48,7 +48,7 @@ export default function PissRestPage() {
       setFormData({ token: '', owner: '', repo: '', path: ''  }); // Reset form
     }  catch (error: any) {      
       //setStatus(`Error: ${error.message}`);
-      setError(error);
+      setError(error.message);
       alert("An error occurred while adding the item today's.");
       //return { success: false, error: error.message || 'Failed to create user.' };
     } 
