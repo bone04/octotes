@@ -13,25 +13,20 @@ interface FileFormProps {
 }
 
 export default function PissRestPage() {
-  const [token, setToken] = useState("");
-  const [owner, setOwner] = useState("");
-  const [repo, setRepo] = useState("");
-  const [path, setPath] = useState("");
+ const [formData, setFormData] = useState({ token: '', owner: '', repo: '', path: '' });
+  const [status, setStatus] = useState('');
 
-  const handleSubmit = async (event?: React.FormEvent<HTMLFormElement>) => {
+   // Handle input changes 
+  const handleChange = (event) => {
+    setFormData({ ...formData, [event.target.name]: event.target.value });
+  };
+  
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (!token || !owner || !repo || !path) {
       alert("Please fill in all fields");
       return;
     }
-    //const formData = new FormData(event.target as HTMLFormElement); 
-        // Convert FormData to JSON
-    /*
-    const jsonObject: any = {};
-    formData.forEach((value, key) => {
-    jsonObject[key] = value;
-    });
-    */
     // onSubmit({ token, owner, repo, path });
     try {
       const response = await fetch("/api/pissrest", {
@@ -39,19 +34,17 @@ export default function PissRestPage() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: ({token, owner, repo, path}),
+        body: JSON.stringify(formData),
       }); 
-        if (response.ok) {
-          alert("Item today's added successfully!");
-          //setFormData({} as FormData);  
-          //const result = await response.json();
-          const data = await response.json();
-          return NextResponse.json(data);
-        } else {
-          alert("Failed to add item today's.");
-        }
+      const data = await res.json();
+        if (!res.ok) {
+        throw new Error(data.error || 'Something went wrong');
+      }
+
+      setStatus(data.message);
+      setFormData({ token: '', owner: '', repo: '', path: ''  }); // Reset form
     }  catch (error) {  
-      console.error("Error adding item today's:", error);
+      setStatus(`Error: ${error.message}`);
       alert("An error occurred while adding the item today's.");
     } 
   };
@@ -71,9 +64,9 @@ export default function PissRestPage() {
                 <input
                   name="token"
                   type="password"
-                  value={token}
+                  value={formData.token}
                   placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"
-                  onChange={(e) => setToken(e.target.value)} 
+                  onChange={handleChange} 
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 <p className="text-xs text-gray-500 mt-1">
@@ -89,9 +82,9 @@ export default function PissRestPage() {
                   <input
                     name="owner"
                     type="text"
-                    value={owner}
+                    value={formData.owner}
                     placeholder="username or org"
-                    onChange={(e) => setOwner(e.target.value)} 
+                    onChange={handleChange} 
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
@@ -103,9 +96,9 @@ export default function PissRestPage() {
                   <input
                     name="repo"
                     type="text"
-                    value={repo}
+                    value={formData.repo}
                     placeholder="repo-name"
-                    onChange={(e) => setRepo(e.target.value)} 
+                    onChange={handleChange} 
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
@@ -117,9 +110,9 @@ export default function PissRestPage() {
                   <input
                     name="path"
                     type="text"
-                    value={path}
+                    value={formData.path}
                     placeholder="path/to/file.json"
-                    onChange={(e) => setPath(e.target.value)} 
+                    onChange={handleChange} 
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
