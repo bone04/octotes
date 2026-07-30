@@ -71,6 +71,7 @@ export default function PissRestPage() {
                   type="password"
                   value={token}
                   placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"
+                  onChange={(e) => setToken(e.target.value)} 
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 <p className="text-xs text-gray-500 mt-1">
@@ -88,6 +89,7 @@ export default function PissRestPage() {
                     type="text"
                     value={owner}
                     placeholder="username or org"
+                    onChange={(e) => setOwner(e.target.value)} 
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
@@ -101,6 +103,7 @@ export default function PissRestPage() {
                     type="text"
                     value={repo}
                     placeholder="repo-name"
+                    onChange={(e) => setRepo(e.target.value)} 
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
@@ -114,6 +117,7 @@ export default function PissRestPage() {
                     type="text"
                     value={path}
                     placeholder="path/to/file.json"
+                    onChange={(e) => setPath(e.target.value)} 
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
