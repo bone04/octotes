@@ -24,6 +24,13 @@ export default function PissRestPage() {
   
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const formData = new FormData();
+      formData.append('github_token', formData.token );
+      formData.append('github_owner', formData.owner );
+      formData.append('github_repo', formData.repo );    
+      formData.append('github_path', formData.path );
+      formData.append('github_branch', 'main');
+    
     if (!formData.token || !formData.owner || !formData.repo || !formData.path) {
       alert("Please fill in all fields");
       return;
