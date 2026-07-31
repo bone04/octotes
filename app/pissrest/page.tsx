@@ -49,7 +49,7 @@ export default function PissRestPage() {
     }  catch (error: any) {      
       //setStatus(`Error: ${error.message}`);
       //setError(error.message);
-      // //alert("An error occurred while adding the item today's.");
+      alert(`An error occurred ${error.message}`);
       return { success: false, error: error.message || 'Failed to create user.' };
       // setError(error instanceof Error ? error.message : "An error occurred");
     } 
