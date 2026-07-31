@@ -1,5 +1,5 @@
 // https://github.com/copilot/c/be498174-20c2-43b7-beb8-d437b11d46da
-
+const dynamic = "force-static
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET() {
