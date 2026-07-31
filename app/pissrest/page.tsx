@@ -30,7 +30,7 @@ export default function PissRestPage() {
     }
     // onSubmit({ token, owner, repo, path });
     try {
-      const response = await fetch("https://bone04.github.io/octotes/api/pissrest", {
+      const response = await fetch(`https://bone04.github.io/octotes/api/pissrest`, {
         method: "PUT",
         headers: {
           'Authorization': 'Bearer YOUR_GITHUB_TOKEN',
