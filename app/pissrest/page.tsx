@@ -30,7 +30,7 @@ export default function PissRestPage() {
     }
     // onSubmit({ token, owner, repo, path });
     try {
-      const response = await fetch(`https://bone04.github.io/octotes/api/pissrest`, {
+      const response = await fetch(`/api/pissrest`, {
         method: "PUT",
         headers: {
           'Authorization': 'Bearer YOUR_GITHUB_TOKEN',
@@ -49,7 +49,7 @@ export default function PissRestPage() {
     }  catch (error: any) {      
       //setStatus(`Error: ${error.message}`);
       //setError(error.message);
-      alert(`An error occurred ${formData.token}`); //  ${error.message} 
+      alert(`An error occurred ${error.message}`); //  ${formData.token} 
       return { success: false, error: error.message || 'Failed to create user.' };
       // setError(error instanceof Error ? error.message : "An error occurred");
     } 
