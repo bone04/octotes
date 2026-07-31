@@ -36,13 +36,6 @@ export default function PissRestPage() {
       return;
     }
     // onSubmit({ token, owner, repo, path });
-    const formData = new FormData();
-      formData.append('github_token', formData.token );
-      formData.append('github_owner', formData.owner );
-      formData.append('github_repo', formData.repo );    
-      formData.append('github_path', formData.path );
-      formData.append('github_branch', 'main');
-
 // Use your own instance or the hosted version
 const response = await fetch('https://picser.pages.dev/api/public-upload', {
   method: 'POST',
