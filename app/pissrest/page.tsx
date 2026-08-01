@@ -36,7 +36,7 @@ export default function PissRestPage() {
       formData.append('path', fpath);
       formData.append('branch', 'main');
     
-    if (!ftoke || !fowner || !frepo || !fpath) {
+    if (!ftoken || !fowner || !frepo || !fpath) {
       alert("Please fill in all fields");
       return;
     }
