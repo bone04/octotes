@@ -29,7 +29,7 @@ export default function PissRestPage() {
       formData.append('token', formData.get('token') as string );
       formData.append('owner', formData.get('owner') as string );
       formData.append('repo', formData.get('repo') as string );    
-      formData.append('path', formData.formData.get('path') as string );
+      formData.append('path', formData.get('path') as string );
       formData.append('branch', 'main');
     
     if (!formData.token || !formData.owner || !formData.repo || !formData.path) {
