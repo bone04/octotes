@@ -26,10 +26,10 @@ export default function PissRestPage() {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     
-      formData.append('token', formData.token );
-      formData.append('owner', formData.owner );
-      formData.append('repo', formData.repo );    
-      formData.append('path', formData.path );
+      formData.append('token', formData.get('token') );
+      formData.append('owner', formData.get('owner') );
+      formData.append('repo', formData.get('repo') );    
+      formData.append('path', formData.formData.get('path') );
       formData.append('branch', 'main');
     
     if (!formData.token || !formData.owner || !formData.repo || !formData.path) {
