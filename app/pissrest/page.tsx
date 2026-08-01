@@ -24,14 +24,14 @@ export default function PissRestPage() {
   
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const formData = new FormData();
-    /*
+    const formData = new FormData(event.currentTarget);
+    
       formData.append('token', formData.token );
       formData.append('owner', formData.owner );
       formData.append('repo', formData.repo );    
       formData.append('path', formData.path );
       formData.append('branch', 'main');
-    */
+    
     if (!formData.token || !formData.owner || !formData.repo || !formData.path) {
       alert("Please fill in all fields");
       return;
