@@ -25,14 +25,18 @@ export default function PissRestPage() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
+    const ftoken = formData.get('token') as string 
+    const fowner = formData.get('owner') as string 
+    const frepo = formData.get('repo') as string
+    const fpath = formData.get('path') as string 
     
-      formData.append('token', formData.get('token') as string );
-      formData.append('owner', formData.get('owner') as string );
-      formData.append('repo', formData.get('repo') as string );    
-      formData.append('path', formData.get('path') as string );
+      formData.append('token', ftoken);
+      formData.append('owner', fowner);
+      formData.append('repo', frepo);    
+      formData.append('path', fpath);
       formData.append('branch', 'main');
     
-    if (!formData.token || !formData.owner || !formData.repo || !formData.path) {
+    if (!ftoke || !fowner || !frepo || !fpath) {
       alert("Please fill in all fields");
       return;
     }
