@@ -42,7 +42,7 @@ export default function PissRestPage() {
     }
     // onSubmit({ token, owner, repo, path });
 // Use your own instance or the hosted version
-const response = await fetch('/api/public-upload', {
+const response = await fetch('/api/pissrest', {
   method: 'POST',
   body: formData
 });
