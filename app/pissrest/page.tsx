@@ -42,6 +42,7 @@ export default function PissRestPage() {
     }
     // onSubmit({ token, owner, repo, path });
 // Use your own instance or the hosted version
+    /*
 const response = await fetch('/api/pissrest', {
   method: 'POST',
   body: formData
@@ -49,7 +50,7 @@ const response = await fetch('/api/pissrest', {
 
 const result = await response.json();
 console.log(result);
-
+*/
 // Or use hosted version directly:
 // const response = await fetch('https://picser.pages.dev/api/public-upload', {...});
     try {
