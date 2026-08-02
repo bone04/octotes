@@ -42,7 +42,7 @@ export default function PissRestPage() {
     }
     // onSubmit({ token, owner, repo, path });
 // Use your own instance or the hosted version
-const response = await fetch('https://picser.pages.dev/api/public-upload', {
+const response = await fetch('/api/public-upload', {
   method: 'POST',
   body: formData
 });
@@ -56,6 +56,7 @@ console.log(result);
       const response = await fetch(`/api/pissrest`, {
         method: "PUT",
         headers: {
+          Access-Control-Allow-Origin: *,
           'Authorization': 'Bearer YOUR_GITHUB_TOKEN',
           'Accept': 'application/vnd.github+json',
           'Content-Type': 'application/json',
