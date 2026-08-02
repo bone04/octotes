@@ -56,7 +56,7 @@ console.log(result);
       const response = await fetch(`/api/pissrest`, {
         method: "PUT",
         headers: {
-          'Access-Control-Allow-Origin': *,
+          'Access-Control-Allow-Origin': 'https://api.github.com/repos/bone04/octotes/',
           'Authorization': 'Bearer YOUR_GITHUB_TOKEN',
           'Accept': 'application/vnd.github+json',
           'Content-Type': 'application/json',
