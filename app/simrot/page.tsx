@@ -2,17 +2,8 @@
 // import { Octokit } from "@octokit/rest";
 import React, { useState } from "react";
 
-interface FileFormProps {
-  onSubmit: (data: {
-    token: string;
-    owner: string;
-    repo: string;
-    path: string;
-  }) => void;
-  loading: boolean;
-}
 
-export default function SimRPage() {
+export default function SimRotPage() {
  const [formData, setFormData] = useState({ token: '', owner: '', repo: '', path: '' });
   const [status, setStatus] = useState('');
   const [error, setError] = useState(null);
