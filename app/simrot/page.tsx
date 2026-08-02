@@ -12,7 +12,7 @@ interface FileFormProps {
   loading: boolean;
 }
 
-export default function PissRestPage() {
+export default function SimRPage() {
  const [formData, setFormData] = useState({ token: '', owner: '', repo: '', path: '' });
   const [status, setStatus] = useState('');
   const [error, setError] = useState(null);
