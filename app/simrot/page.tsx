@@ -41,7 +41,7 @@ export default function SimRotPage() {
     try {
       const response = await fetch('/api/simrot', {
         method: 'POST',
-        body: JSON.stringify(formData),
+        body: formData, //JSON.stringify(formData),
       });
 
       const data = await response.json();
