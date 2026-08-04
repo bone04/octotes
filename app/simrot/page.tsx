@@ -17,18 +17,19 @@ export default function SimRotPage() {
     event.preventDefault();
    
     // const formData = new FormData(event.currentTarget);
+   /*
     const ftoken = formData.get('token') as string 
     const fowner = formData.get('owner') as string 
     const frepo = formData.get('repo') as string
     const fpath = formData.get('path') as string 
-    /*
+    
       formData.append('token', ftoken);
       formData.append('owner', fowner);
       formData.append('repo', frepo);    
       formData.append('path', fpath);
       formData.append('branch', 'main');
     */
-    if (!ftoken || !fowner || !frepo || !fpath) {
+    if (!formData.token || !formData.owner || !formData.repo || !formData.path) {
       alert("Please fill in all fields");
       return;
     }
