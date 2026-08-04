@@ -15,13 +15,13 @@ export default function SimRotPage() {
   
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-   /*
-    const formData = new FormData(event.currentTarget);
+   
+    // const formData = new FormData(event.currentTarget);
     const ftoken = formData.get('token') as string 
     const fowner = formData.get('owner') as string 
     const frepo = formData.get('repo') as string
     const fpath = formData.get('path') as string 
-    
+    /*
       formData.append('token', ftoken);
       formData.append('owner', fowner);
       formData.append('repo', frepo);    
