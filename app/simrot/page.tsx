@@ -40,14 +40,15 @@ export default function SimRotPage() {
 // const response = await fetch('https://picser.pages.dev/api/public-upload', {...});
     try {
       const response = await fetch('/api/simrot', {
-        method: 'POST',
-        body: formData, //JSON.stringify(formData),
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
 
       const data = await response.json();
         if (!response.ok) {
-        throw new Error(data.error || 'Something went wrong');
-      }
+         throw new Error(data.error || 'Something went wrong');
+       }
       setStatus(data.message);
       setFormData({ token: '', owner: '', repo: '', path: ''  }); // Reset form
     }  catch (error: any) {      
