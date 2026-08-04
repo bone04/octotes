@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 
 export default function SimRotPage() {
- const [formData, setFormData] = useState({ token: '', owner: '', repo: '', path: '' });
+ const [formData, setFormData] = useState({ ftoken: '', fowner: '', frepo: '', fpath: '' });
   const [status, setStatus] = useState('');
   const [error, setError] = useState(null);
 
