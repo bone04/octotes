@@ -15,6 +15,7 @@ export default function SimRotPage() {
   
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+   /*
     const formData = new FormData(event.currentTarget);
     const ftoken = formData.get('token') as string 
     const fowner = formData.get('owner') as string 
@@ -26,7 +27,7 @@ export default function SimRotPage() {
       formData.append('repo', frepo);    
       formData.append('path', fpath);
       formData.append('branch', 'main');
-    
+    */
     if (!ftoken || !fowner || !frepo || !fpath) {
       alert("Please fill in all fields");
       return;
